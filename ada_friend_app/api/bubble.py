@@ -28,8 +28,10 @@ class Bubble(Resource):
             try:
                 info_token = Token.validar_token(json['token'])
 
+                nick = Database().get_document('usuarios', {'_id': info_token['id_usuario']}, {'nick': 1})[0]
+
                 Database().set_document('postagens', {
-                    'usuario': info_token['id_usuario'],
+                    'usuario': nick,
                     'tipo': json['tipo'],
                     'interesse': json['interesse'],
                     'texto': json['texto'],
