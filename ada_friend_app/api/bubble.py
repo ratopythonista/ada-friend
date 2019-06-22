@@ -31,7 +31,7 @@ class Bubble(Resource):
                 nick = Database().get_document('usuarios', {'_id': info_token['id_usuario']}, {'nick': 1})[0]
 
                 Database().set_document('postagens', {
-                    'usuario': nick,
+                    'usuario': nick['nick'],
                     'tipo': json['tipo'],
                     'interesse': json['interesse'],
                     'texto': json['texto'],
