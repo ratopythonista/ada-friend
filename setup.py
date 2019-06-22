@@ -15,6 +15,6 @@ setup(
             'telepot==12.7',
             'flasgger==0.9.2',
             'loguru==0.2.5',
-            'rasa==1.1.3',
+            'PyJWT==1.7.1'
     ],
 )

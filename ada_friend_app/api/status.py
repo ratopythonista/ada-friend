@@ -3,7 +3,7 @@ import os
 from loguru import logger
 from flask_restful import Resource
 
-from ada_friend_app.modulo.mod_database import ModDatabase
+from ada_friend_app.servico.mod_database import ModDatabase
 
 
 class Status(Resource):
