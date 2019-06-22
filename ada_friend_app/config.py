@@ -1,9 +1,10 @@
 import os
 
 JWT_PWD = 'secret' #os.environ['JWT_PWD']
-JWT_EXP = 8 #os.environ['JWT_PWD']
+JWT_EXP = 8 #os.environ['JWT_EXP']
 
-MONGO_USER = '' #os.environ['MONGO_USER']
-MONGO_PWD = '' #os.environ['MONGO_PWD']
-MONGO_IP = '172.17.0.2' #os.environ['MONGO_IP']
+MONGO_USER = 'admin'
+MONGO_PWD = os.environ['PASSAF']
+MONGO_IP = 'ds117540.mlab.com'
+MONGO_PORT = '17540'
 

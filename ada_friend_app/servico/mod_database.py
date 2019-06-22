@@ -1,6 +1,6 @@
 from pymongo import MongoClient
 
-from ada_friend_app.config import MONGO_USER, MONGO_PWD, MONGO_IP
+from ada_friend_app.config import MONGO_USER, MONGO_PWD, MONGO_IP, MONGO_PORT
 
 
 class ModDatabase:
@@ -79,4 +79,4 @@ class ModDatabase:
 
 class Database(ModDatabase):
     def __init__(self):
-        super().__init__('ada-friend', MONGO_USER, MONGO_PWD, MONGO_IP)
+        super().__init__('ada-friend', MONGO_USER, MONGO_PWD, MONGO_IP, MONGO_PORT)
