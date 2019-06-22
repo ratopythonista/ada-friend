@@ -1,0 +1,30 @@
+CADASTRO
+---
+tags:
+  - CADASTRO
+parameters:
+  - name: body
+    in: body
+    required: true
+    schema:
+      email: string
+      senha: string
+      nick: string
+      required:
+        - email
+        - senha
+        - nick
+      properties:
+        email:
+          type: string
+          description: The user name.
+          default: "Sirius Black"
+        senha:
+          type: string
+          description: The user age (should be integer)
+        nick:
+          type: string
+          description: The user age (should be integer)
+responses:
+  200:
+    description: A single user item

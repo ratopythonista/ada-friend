@@ -1,0 +1,35 @@
+FEED
+---
+tags:
+  - Feed
+parameters:
+  - name: body
+    in: body
+    required: true
+    schema:
+      token: string
+      tipo: string,
+      interesse: string,
+      texto: string
+      required:
+        - token
+        - tipo
+        - interesse
+        - texto
+      properties:
+        token:
+          type: string
+          description: The user name.
+          default: "Sirius Black"
+        tipo:
+          type: string
+          description: The user age (should be integer)
+        interesse:
+          type: string
+          description: The user age (should be integer)
+        texto:
+          type: string
+          description: The user age (should be integer)
+responses:
+  200:
+    description: A single user item

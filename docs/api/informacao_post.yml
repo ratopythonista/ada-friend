@@ -1,0 +1,20 @@
+INFORMACAÇAO
+---
+tags:
+  - Informação
+parameters:
+  - name: body
+    in: body
+    required: true
+    schema:
+      token: string
+      required:
+        - token
+      properties:
+        token:
+          type: string
+          description: The user name.
+          default: "Sirius Black"
+responses:
+  200:
+    description: A single user item

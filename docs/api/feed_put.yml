@@ -1,0 +1,35 @@
+FEED
+---
+tags:
+  - Feed
+parameters:
+  - name: body
+    in: body
+    required: true
+    schema:
+      token: string
+      id_post: string
+      comentario: string
+      like: string
+      required:
+        - token
+        - id_post
+        - comentario
+        - like
+      properties:
+        token:
+          type: string
+          description: The user name.
+          default: "Sirius Black"
+        id_post:
+          type: string
+          description: The user age (should be integer)
+        comentario:
+          type: string
+          description: The user age (should be integer)
+        like:
+          type: string
+          description: ID USR
+responses:
+  200:
+    description: A single user item

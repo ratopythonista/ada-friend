@@ -1,0 +1,25 @@
+FEED
+---
+tags:
+  - Filtro Feed
+parameters:
+  - name: body
+    in: body
+    required: true
+    schema:
+      token: string
+      interesses: string
+      required:
+        - token
+        - interesses
+      properties:
+        token:
+          type: string
+          description: The user name.
+          default: "Sirius Black"
+        interesses:
+          type: string
+          description: The user age (should be integer)
+responses:
+  200:
+    description: A single user item

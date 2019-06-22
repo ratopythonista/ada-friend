@@ -1,0 +1,8 @@
+FEED
+---
+tags:
+  - Feed
+
+responses:
+  200:
+    description: A single user item

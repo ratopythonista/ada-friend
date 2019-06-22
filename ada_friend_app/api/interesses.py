@@ -11,9 +11,11 @@ from ada_friend_app.servico.mod_database import Database
 
 
 class Interesses(Resource):
+    @swag_from('../../docs/api/interesses_get.yml')
     def get(self):
         return Resposta.retorno(Database().get_document('interesses')[0]['interesses'])
 
+    @swag_from('../../docs/api/interesses_post.yml')
     def post(self):
         json = request.json
 

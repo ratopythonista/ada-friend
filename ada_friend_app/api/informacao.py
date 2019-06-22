@@ -10,6 +10,7 @@ from ada_friend_app.servico.mod_database import Database
 
 
 class Informacao(Resource):
+    @swag_from('../../docs/api/informacao_post.yml')
     def post(self):
         json = request.json
 

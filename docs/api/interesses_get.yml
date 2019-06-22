@@ -1,0 +1,7 @@
+INTERESSES
+---
+tags:
+  - Interesses
+responses:
+  200:
+    description: A single user item

@@ -14,9 +14,26 @@ from ada_friend_app.api import add_resources
 logger.add("file_1.log", rotation="500 MB")
 logger.add(sys.stdout, colorize=True, format="<green>{time}</green> <level>{message}</level>")
 
+template = {
+    "swagger": "2.0",
+    "info": {
+        "title": "HACKATON - TEMPO DE MUDANÇAS",
+        "description": "",
+        "version": "0.0.2"
+    },
+    # "basePath": "/api",
+    # "host": "localhost:5000",
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ]
+}
+
 app = Flask(__name__)
 CORS(app)
 api = Api(app)
-swagger = Swagger(app)
+swagger = Swagger(app, template=template)
 
 add_resources(api)
