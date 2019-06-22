@@ -5,7 +5,7 @@ def set_tipo(token, tipos):
     __db = Database()
     infos = Token.validar_token(token)
     usuario = __db.get_document('usuarios', filter=
-    {'$and':[{'_id':infos['email']}, {'senha':infos['senha']}]})
+    {'$and':[{'_id':infos['id_usuario']}, {'senha':infos['pwd']}]})
     if usuario:
         __db.update_document('usuarios', filter={'_id':usuario[0]['_id']}, 
         value={'tipo':tipos})
