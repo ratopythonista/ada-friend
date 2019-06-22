@@ -1,7 +1,9 @@
 from pymongo import MongoClient
 
+from ada_friend_app.config import MONGO_USER, MONGO_PWD, MONGO_IP
 
-class ModDatabase():
+
+class ModDatabase:
     def __init__(self, db, user=None, password=None,
                  host='localhost', port=27017):
         if user:
@@ -73,3 +75,8 @@ class ModDatabase():
 
     def __del__(self):
         self.__client.close()
+
+
+class Database(ModDatabase):
+    def __init__(self):
+        super().__init__('ada-friend', MONGO_USER, MONGO_PWD, MONGO_IP)

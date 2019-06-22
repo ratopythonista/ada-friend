@@ -8,11 +8,11 @@ from ada_friend_app.config import JWT_PWD, JWT_EXP
 
 class Token:
     # TODO: ALTERAR PARA HORAS A VALIDAÇÃO DO TOKEN
-    def __init__(self, senha):
-        self.token = self.__token(senha)
+    def __init__(self, senha, id_usuario):
+        self.token = self.__token(senha, id_usuario)
 
-    def __token(self, senha):
-        return jwt.encode({'pwd': senha, 'exp': datetime.utcnow() + timedelta(seconds=JWT_EXP)}, JWT_PWD, algorithm='HS256')
+    def __token(self, senha, id_usuario):
+        return jwt.encode({'pwd': senha, 'id_usuario': id_usuario, 'exp': datetime.utcnow() + timedelta(seconds=JWT_EXP)}, JWT_PWD, algorithm='HS256')
 
     def validar_token(self):
         try:

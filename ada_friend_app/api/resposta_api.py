@@ -21,6 +21,6 @@ class Resposta:
 
     @staticmethod
     def token_validado(token) -> tuple:
-        return {'status': 200, 'token': token}, 401
+        return {'status': 200, 'token': token.decode('utf-8')}, 200
 
         
