@@ -17,14 +17,14 @@ class Login(Resource):
 
         if json.get('email', False) and json.get('senha', False):
             senha = Sha256(json['senha']).hash
-            usuario = Database().get_document('usuarios', {'email': json['email'], 'senha': senha})
+            usuario = Database().get_document('usuarios', {'_id': json['email'], 'senha': senha})
 
             if usuario:
                 usuario = usuario[0]
                 logger.debug(f"{json['email']} - CONECTADO")
 
                 try:
-                    token = Token.gerar(usuario['senha'], usuario['email'])
+                    token = Token.gerar(usuario['senha'], usuario['_id'])
                     return Resposta.token_validado(token)
                 except ExpiredSignatureError:
                     return Resposta.nao_aceito('Token expirado')
