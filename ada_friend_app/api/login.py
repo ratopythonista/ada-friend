@@ -17,7 +17,7 @@ class Login(Resource):
 
         if json.get('email', False) and json.get('senha', False):
             senha = Sha256(json['senha']).hash
-            usuario = Database().get_document('usuarios', {'email': json['email'], 'senha': senha})
+            usuario = Database().get_document('usuarios', {'_id': json['email'], 'senha': senha})
 
             if usuario:
                 usuario = usuario[0]
