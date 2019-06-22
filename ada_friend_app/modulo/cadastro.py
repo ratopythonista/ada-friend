@@ -13,7 +13,9 @@ def cadastrar(infos):
     infos = {
         '_id':infos['email'], 
         'nick':infos['nick'], 
-        'senha':Sha256(infos['senha']).hash
+        'senha':Sha256(infos['senha']).hash,
+        'interesses':list(),
+        'tipo':list()
     }
 
     __db.set_document('usuarios', infos)
