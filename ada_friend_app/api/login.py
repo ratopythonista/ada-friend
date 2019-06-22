@@ -24,7 +24,7 @@ class Login(Resource):
                 logger.debug(f"{json['email']} - CONECTADO")
 
                 try:
-                    token = Token.gerar(usuario['senha'], usuario['email'])
+                    token = Token.gerar(usuario['senha'], usuario['_id'])
                     return Resposta.token_validado(token)
                 except ExpiredSignatureError:
                     return Resposta.nao_aceito('Token expirado')
