@@ -2,6 +2,7 @@ from loguru import logger
 from flask import request
 from flasgger import swag_from
 from flask_restful import Resource
+from jwt.exceptions import ExpiredSignatureError
 
 from ada_friend_app.modulo.cripto import Sha256
 from ada_friend_app.modulo.jwt_auth import Token
@@ -21,7 +22,14 @@ class Login(Resource):
             if usuario:
                 usuario = usuario[0]
                 logger.debug(f"{json['email']} - CONECTADO")
-                return Resposta.token_validado(Token(usuario['senha'], usuario['email']).token)
+
+                try:
+                    token = Token.gerar(usuario['senha'], usuario['email'])
+                    return Resposta.token_validado(token)
+                except ExpiredSignatureError:
+                    return Resposta.nao_aceito('Token expirado')
+                except Exception as e:
+                    return Resposta.error(str(e))          
             else:
                 logger.debug(f"{json['email']} - ERRO DE ACESSO")                
                 return Resposta.nao_aceito('Usuário ou senha inválido!')
