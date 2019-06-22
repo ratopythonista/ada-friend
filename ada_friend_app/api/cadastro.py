@@ -9,6 +9,7 @@ from ada_friend_app.modulo.jwt_auth import Token
 
 class Cadastro(Resource):
     def post(self):
+        logger.debug("[CADASTRO] Requisição recebida")
         try:
             response = request.json
             cadastro = cadastrar(response)
@@ -17,7 +18,7 @@ class Cadastro(Resource):
             token = Token(cadastro['senha'], cadastro['_id']).token
             if not token:
                 Resposta.error("Não foi possivel gerar token!")
-            return Resposta.token_validado(token.decode('utf-8'))
+            return Resposta.token_validado(token)
         except DuplicateKeyError:
             return Resposta.nao_aceito("Usuário já existe!")
         except Exception as e:

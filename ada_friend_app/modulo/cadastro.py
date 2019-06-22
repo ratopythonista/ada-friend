@@ -1,6 +1,3 @@
-import os
-
-from Crypto.Hash import SHA256
 from pymongo.errors import DuplicateKeyError
 
 from ada_friend_app.servico.mod_database import Database
