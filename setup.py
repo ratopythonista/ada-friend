@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='ada_friend',
-    version='0.0.1',
+    version='0.0.2',
     url='https://github.com/ratopythonista/ada-friend.git',
     author='Catlangos',
     author_email='rodrigoara27@gmail.com',
