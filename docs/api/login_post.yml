@@ -1,0 +1,25 @@
+LOGIN
+---
+tags:
+  - Login
+parameters:
+  - name: body
+    in: body
+    required: true
+    schema:
+      email: string
+      senha: string
+      required:
+        - email
+        - senha
+      properties:
+        email:
+          type: string
+          description: The user name.
+          default: "Sirius Black"
+        senha:
+          type: string
+          description: The user age (should be integer)
+responses:
+  200:
+    description: A single user item

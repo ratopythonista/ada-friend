@@ -12,7 +12,7 @@ class Token:
         self.token = self.__token(senha, id_usuario)
 
     def __token(self, senha, id_usuario):
-        return jwt.encode({'pwd': senha, 'id_usuario':id_usuario, 'exp': datetime.utcnow() + timedelta(seconds=JWT_EXP)}, JWT_PWD, algorithm='HS256')
+        return jwt.encode({'pwd': senha, 'id_usuario': id_usuario, 'exp': datetime.utcnow() + timedelta(seconds=JWT_EXP)}, JWT_PWD, algorithm='HS256')
 
     def validar_token(self):
         try:
