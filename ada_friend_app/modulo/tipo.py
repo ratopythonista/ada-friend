@@ -3,4 +3,5 @@ from ada_friend_app.modulo.jwt_auth import Token
 
 def set_tipo(token, tipos):
     infos = Token.validar_token(token)
+    return infos
     # VERIFICA EXISTENCIA NO BD
