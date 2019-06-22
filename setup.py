@@ -17,5 +17,6 @@ setup(
             'loguru==0.2.5',
             'PyJWT==1.7.1',
             'pycrypto==2.6.1',
+            'flask-cors==3.0.8',
     ],
 )
