@@ -15,7 +15,7 @@ setup(
             'telepot==12.7',
             'flasgger==0.9.2',
             'loguru==0.2.5',
-            'PyJWT==1.7.1',
+            'PyJWT==2.4.0',
             'pycrypto==2.6.1',
             'flask-cors==3.0.8',
     ],
